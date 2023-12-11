@@ -1,0 +1,14 @@
+/* src/app/user-table/user-table.component.css */
+table {
+  font-size: 16px; /* Adjust the font size */
+  width: 100%; /* Make the table take the full width */
+  margin-top: 20px; /* Add some top margin */
+}
+
+th, td {
+  padding: 12px; /* Adjust the padding for cells */
+}
+
+button {
+  font-size: 14px; /* Adjust the font size for buttons */
+}

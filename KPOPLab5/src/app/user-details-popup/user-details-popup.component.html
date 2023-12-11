@@ -1,0 +1,11 @@
+<!-- src/app/user-details-popup/user-details-popup.component.html -->
+<h2 mat-dialog-title>User Details</h2>
+<div mat-dialog-content>
+  <p><strong>Name:</strong> {{ data.name.first }} {{ data.name.last }}</p>
+  <p><strong>Email:</strong> {{ data.email }}</p>
+  <p><strong>Username:</strong> {{ data.login.username }}</p>
+  <p><strong>Phone:</strong> {{ data.phone }}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>
