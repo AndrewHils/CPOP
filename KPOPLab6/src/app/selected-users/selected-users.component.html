@@ -1,0 +1,20 @@
+<!-- src/app/selected-users/selected-users.component.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Selected Users</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let user of selectedUsers" (click)="showDetails(user)">
+      <ion-label>
+        <h2>{{ user.name.first }} {{ user.name.last }}</h2>
+        <p>Email: {{ user.email }}</p>
+        <p>Username: {{ user.login.username }}</p>
+        <p>Phone: {{ user.phone }}</p>
+      </ion-label>
+      <ion-button (click)="removeFromSelectedUsers(user)">Remove from Selected</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

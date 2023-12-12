@@ -1,0 +1,20 @@
+<!-- src/app/user-table/user-table.component.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>User Table</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let user of users" (click)="showDetails(user)">
+      <ion-label>
+        <h2>{{ user.name.first }} {{ user.name.last }}</h2>
+        <p>Email: {{ user.email }}</p>
+        <p>Username: {{ user.login.username }}</p>
+        <p>Phone: {{ user.phone }}</p>
+      </ion-label>
+      <ion-button (click)="addToSelectedUsers(user)">Add to Selected</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

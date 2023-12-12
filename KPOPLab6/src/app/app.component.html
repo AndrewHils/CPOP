@@ -1,0 +1,23 @@
+<!-- src/app/app.component.html -->
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <!-- Side Menu (Optional) -->
+    <ion-menu contentId="main-content">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <!-- Add menu items or navigation links here -->
+        <ion-list>
+          <ion-item routerLink="/user-table" routerDirection="forward">User Table</ion-item>
+          <ion-item routerLink="/selected-users" routerDirection="forward">Selected Users</ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <!-- Main Content -->
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

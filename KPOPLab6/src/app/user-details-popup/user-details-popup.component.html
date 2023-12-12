@@ -1,0 +1,31 @@
+<!-- src/app/user-details-popup/user-details-popup.component.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>User Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- <ion-content> -->
+  <ion-list>
+    <ion-item>
+      <ion-label>Name:</ion-label>
+      <ion-text><h2>{{ data.name.first }} {{ data.name.last }}</h2></ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Email:</ion-label>
+      <ion-text>{{ data.email }}</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Username:</ion-label>
+      <ion-text>{{ data.login.username }}</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Phone:</ion-label>
+      <ion-text>{{ data.phone }}</ion-text>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" (click)="closePopup()">Close</ion-button>
+<!-- </ion-content> -->
