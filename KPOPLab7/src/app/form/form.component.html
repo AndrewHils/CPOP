@@ -1,0 +1,83 @@
+
+<!-- src/app/form/form.component.html -->
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div formGroupName="organization">
+    <h2>Organization Information</h2>
+    <div>
+    <label for="name">Name* </label>
+    <input type="text" id="name" formControlName="name" required/>
+
+    <div *ngIf="form.get('organization.name')?.invalid && form.get('organization.name')?.touched">
+      <div id="name-error" *ngIf="form.get('organization.name')?.hasError('required')">Name is required.</div>
+    </div>
+  </div>
+  <div>
+    <label for="city">City* </label>
+    <input type="text" id="city" formControlName="city" required/>
+
+    <div *ngIf="form.get('organization.city')?.invalid && form.get('organization.city')?.touched">
+      <div id="city-error" *ngIf="form.get('organization.city')?.hasError('required')">City is required.</div>
+    </div>
+  </div>
+  <div>
+    <label for="address">Address* </label>
+    <input type="text" id="address" formControlName="address" required/>
+
+    <div *ngIf="form.get('organization.address')?.invalid && form.get('organization.address')?.touched">
+      <div id="address-error" *ngIf="form.get('organization.address')?.hasError('required')">Address is required.</div>
+    </div>
+    </div>
+  </div>
+
+  <div formGroupName="contactPerson">
+    <h2>Contact Person</h2>
+    <div>
+      <label for="contactName">Name* </label>
+    <input type="text" id="contactName" formControlName="name" required/>
+
+    <div *ngIf="form.get('contactPerson.name')?.invalid && form.get('contactPerson.name')?.touched">
+      <div id="contactName-error" *ngIf="form.get('contactPerson.name')?.hasError('required')">Contact Name is required.</div>
+    </div>
+    </div>
+
+    <div>
+      <label for="phone">Phone* </label>
+    <input type="text" id="phone" formControlName="phone" required/>
+
+    <div *ngIf="form.get('contactPerson.phone')?.invalid && form.get('contactPerson.phone')?.touched">
+      <div id="phone-error" *ngIf="form.get('contactPerson.phone')?.hasError('required')">Phone is required.</div>
+    </div>
+    </div>
+
+    <div>
+      <label for="email">Email* </label>
+    <input type="email" id="email" formControlName="email" required/>
+
+    <div *ngIf="form.get('contactPerson.email')?.invalid && form.get('contactPerson.email')?.touched">
+      <div id="email-error" *ngIf="form.get('contactPerson.email')?.hasError('required')">Email is required.</div>
+      <div id="email-error2" *ngIf="form.get('contactPerson.email')?.invalid">Wrong email.</div>
+    </div>
+    </div>
+  </div>
+
+  <div formGroupName="objectInfo">
+    <h2>Object Information</h2>
+    <div>
+      <label for="objectName">Name* </label>
+    <input type="text" id="objectName" formControlName="name" required/>
+
+    <div *ngIf="form.get('objectInfo.name')?.invalid && form.get('objectInfo.name')?.touched">
+      <div id="objectName-error" *ngIf="form.get('objectInfo.name')?.hasError('required')">Object name is required.</div>
+    </div>
+    </div>
+
+    <label for="usageArea">Usage Area* </label>
+    <select id="usageArea" formControlName="usageArea" required>
+      <option value="heating">Heating</option>
+      <option value="ventilation">Ventilation</option>
+      <option value="gvs">GVS (Hot Water Supply)</option>
+    </select>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>
